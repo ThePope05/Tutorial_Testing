@@ -16,4 +16,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_the_homepage_contains_documentation_link(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertSee('Documentation');
+    }
 }
